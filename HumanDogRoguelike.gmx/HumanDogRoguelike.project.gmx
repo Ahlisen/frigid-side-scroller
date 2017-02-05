@@ -8,15 +8,21 @@
   <sprites name="sprites">
     <sprite>sprites\spr_human_idle</sprite>
     <sprite>sprites\spr_dog_idle</sprite>
+    <sprite>sprites\spr_fir</sprite>
+    <sprite>sprites\spr_mask</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_mountain_range</background>
     <background>background\bg_snow</background>
+    <background>background\bg_middle</background>
+    <background>background\bg_snowfall</background>
+    <background>background\spr_forest</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_human</object>
     <object>objects\obj_dog</object>
+    <object>objects\obj_wrap</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\MainRoom</room>
