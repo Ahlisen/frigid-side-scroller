@@ -10,10 +10,13 @@
     <sprite>sprites\spr_human_aim</sprite>
     <sprite>sprites\spr_human_walk</sprite>
     <sprite>sprites\spr_dog_idle</sprite>
+    <sprite>sprites\spr_dog_walk</sprite>
+    <sprite>sprites\spr_dog_stand</sprite>
     <sprite>sprites\spr_fir</sprite>
     <sprite>sprites\spr_mask</sprite>
     <sprite>sprites\spr_breath</sprite>
-    <sprite>sprites\spr_bullet</sprite>
+    <sprite>sprites\spr_bird</sprite>
+    <sprite>sprites\sprite8</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_mountain_range</background>
@@ -27,6 +30,9 @@
     <script>scripts\player_input.gml</script>
     <script>scripts\human_movement.gml</script>
     <script>scripts\dog_movement.gml</script>
+    <script>scripts\death_basic.gml</script>
+    <script>scripts\flee_basic.gml</script>
+    <script>scripts\flee_bird.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_tv.shader</shader>
@@ -43,7 +49,9 @@
     <object>objects\obj_mob</object>
     <object>objects\obj_display_manager</object>
     <object>objects\obj_view_controller</object>
+    <object>objects\obj_bird</object>
     <object>objects\obj_bullet</object>
+    <object>objects\obj_shootable</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\_Init_display</room>
