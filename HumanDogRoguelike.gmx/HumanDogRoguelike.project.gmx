@@ -7,9 +7,13 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_human_idle</sprite>
+    <sprite>sprites\spr_human_aim</sprite>
+    <sprite>sprites\spr_human_walk</sprite>
     <sprite>sprites\spr_dog_idle</sprite>
     <sprite>sprites\spr_fir</sprite>
     <sprite>sprites\spr_mask</sprite>
+    <sprite>sprites\spr_breath</sprite>
+    <sprite>sprites\spr_bullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_mountain_range</background>
@@ -19,12 +23,30 @@
     <background>background\spr_forest</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\player_input.gml</script>
+    <script>scripts\human_movement.gml</script>
+    <script>scripts\dog_movement.gml</script>
+  </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shd_tv.shader</shader>
+  </shaders>
+  <fonts name="fonts">
+    <font>fonts\fnt_normal</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_human</object>
     <object>objects\obj_dog</object>
     <object>objects\obj_wrap</object>
+    <object>objects\obj_draw_controller</object>
+    <object>objects\obj_solid</object>
+    <object>objects\obj_mob</object>
+    <object>objects\obj_display_manager</object>
+    <object>objects\obj_view_controller</object>
+    <object>objects\obj_bullet</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\_Init_display</room>
     <room>rooms\MainRoom</room>
   </rooms>
   <help>
