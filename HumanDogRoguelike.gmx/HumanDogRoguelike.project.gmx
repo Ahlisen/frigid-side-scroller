@@ -15,8 +15,14 @@
     <sprite>sprites\spr_fir</sprite>
     <sprite>sprites\spr_mask</sprite>
     <sprite>sprites\spr_breath</sprite>
+    <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_bird</sprite>
-    <sprite>sprites\sprite8</sprite>
+    <sprites name="boss">
+      <sprite>sprites\spr_boss_body</sprite>
+      <sprite>sprites\spr_boss_eye</sprite>
+      <sprite>sprites\spr_boss_fist</sprite>
+    </sprites>
+    <sprite>sprites\spr_snowfog</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_mountain_range</background>
@@ -33,6 +39,12 @@
     <script>scripts\death_basic.gml</script>
     <script>scripts\flee_basic.gml</script>
     <script>scripts\flee_bird.gml</script>
+    <script>scripts\fist_prepare.gml</script>
+    <script>scripts\fist_orbit.gml</script>
+    <script>scripts\fist_attack.gml</script>
+    <script>scripts\do_nothing.gml</script>
+    <script>scripts\death_eye.gml</script>
+    <script>scripts\death_boss.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_tv.shader</shader>
@@ -52,7 +64,14 @@
     <object>objects\obj_bird</object>
     <object>objects\obj_bullet</object>
     <object>objects\obj_shootable</object>
+    <object>objects\obj_boss</object>
+    <object>objects\obj_boss_eye</object>
+    <object>objects\obj_boss_fist</object>
+    <object>objects\obj_sfx</object>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tl_boss_fist</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\_Init_display</room>
     <room>rooms\MainRoom</room>

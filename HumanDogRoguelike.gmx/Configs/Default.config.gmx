@@ -653,7 +653,7 @@
   <ConfigConstants>
     <constants number="2">
       <constant name="PERSPECTIVE">0.8</constant>
-      <constant name="ANIMATION">0.06</constant>
+      <constant name="ANIMATION">0.1</constant>
     </constants>
   </ConfigConstants>
 </Config>

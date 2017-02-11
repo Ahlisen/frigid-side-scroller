@@ -41,18 +41,19 @@ if (inputAimHorizontal != 0 || inputAimVertical != 0) {
     
     if(triggerValue > 0.95) {
         if(can_shoot) {
-            gamepad_set_vibration(player, triggerValue, triggerValue);
+            gamepad_set_vibration(player, triggerValue, triggerValue*0.5);
             alarm[1] = room_speed;
-            obj_view_controller.screenShakeX = triggerValue*4;
-            obj_view_controller.screenShakeY = triggerValue*4;
+            obj_view_controller.screenShakeX = triggerValue*2;
+            obj_view_controller.screenShakeY = triggerValue*2;
             obj_view_controller.alarm[0] = 10;
             //var aimDirection = point_direction(0,0,inputAimHorizontal,inputAimVertical);
             var bullet = instance_create(aimX,aimY, obj_bullet);
+            bullet.owner = id;
             with(obj_shootable) {
                 if(instance_place(x,y,obj_bullet))
-                    script_execute(death);
+                    script_execute(death,bullet);
                 else
-                    script_execute(flee);
+                    script_execute(react);
             }
             can_shoot = false;
             with(obj_wrap) {
