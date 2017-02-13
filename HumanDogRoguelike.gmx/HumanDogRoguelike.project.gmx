@@ -13,7 +13,7 @@
     <sprite>sprites\spr_dog_walk</sprite>
     <sprite>sprites\spr_dog_stand</sprite>
     <sprite>sprites\spr_fir</sprite>
-    <sprite>sprites\spr_mask</sprite>
+    <sprite>sprites\spr_palette</sprite>
     <sprite>sprites\spr_breath</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_bird</sprite>
@@ -48,6 +48,7 @@
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_tv.shader</shader>
+    <shader type="GLSLES">shaders\shd_blue.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_normal</font>

@@ -15,8 +15,7 @@ if (inputHorizontal != 0 || inputVertical != 0) {
     velocity = inputStrength * multiplier;
     image_speed = inputStrength * ANIMATION * multiplier * 2;
     
-    //Just for fun
-    obj_draw_controller.blueVal = 1 + velocity;
+    
     
     horizontalSpeed = lengthdir_x(velocity,inputDirection);
     verticalSpeed = lengthdir_y(velocity,inputDirection);
@@ -29,6 +28,10 @@ if (inputHorizontal != 0 || inputVertical != 0) {
     image_speed = ANIMATION;
     movement = movement.idle;
 }
+
+//Just for fun
+obj_draw_controller.paletteVal = gamepad_button_value(0, gp_shoulderrb);
+
 
 if (inputAimHorizontal != 0 || inputAimVertical != 0) {
     var triggerValue = gamepad_button_value(0, gp_shoulderrb);

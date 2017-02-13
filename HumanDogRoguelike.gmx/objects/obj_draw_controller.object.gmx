@@ -28,9 +28,13 @@
             <string>//surface_resize(application_surface,1000,500)
 
 application_surface_draw_enable(false);
-shaderBlue = shader_get_uniform( shd_tv, "blue");
-blueVal = 1;
+palette = shader_get_uniform( shd_tv, "palette");
+pal_uvs = shader_get_uniform( shd_tv, "pal_uvs");
+paletteVal = 1;
 
+t_sampler = shader_get_sampler_index(shd_tv, "paletteTexture");
+spr = sprite_get_texture(spr_palette, 0);
+tex = sprite_get_uvs(spr_palette, 0);
 </string>
           </argument>
         </arguments>
@@ -54,8 +58,11 @@ blueVal = 1;
           <argument>
             <kind>1</kind>
             <string>
+
 shader_set(shd_tv);
-shader_set_uniform_f(shaderBlue, blueVal);
+texture_set_stage(t_sampler, spr);
+shader_set_uniform_f(palette, paletteVal);
+shader_set_uniform_f_array(pal_uvs, tex);
 draw_surface( application_surface, 0, 0 );
 shader_reset();
 </string>

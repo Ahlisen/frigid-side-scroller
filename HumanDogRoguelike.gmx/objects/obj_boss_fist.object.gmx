@@ -33,6 +33,7 @@ timeline_position = 0;
 timeline_running = false;
 
 attacked = false;
+velocityY = 0;
 </string>
           </argument>
         </arguments>

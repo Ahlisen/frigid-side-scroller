@@ -23,19 +23,15 @@ void main()
 //
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-uniform float palette;
-uniform sampler2D paletteTexture;
-uniform vec4 pal_uvs;
+uniform float blue;
 
 void main()
 {
     vec2 uv = v_vTexcoord.xy;
     vec4 col = texture2D(gm_BaseTexture, vec2(uv.x, uv.y));
+
+    col.b *= blue;
     
-    //col.r *= blue;
-    float range = pal_uvs.z - pal_uvs.x;
-    float pal_r = (pal_uvs.w - pal_uvs.y);
-    vec4 col_new = texture2D(paletteTexture, vec2(pal_uvs.x+col.r*range, pal_uvs.y+palette*pal_r));
-    gl_FragColor = col_new;//v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+    gl_FragColor = col;//v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 }
 
