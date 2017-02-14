@@ -34,7 +34,7 @@ void main()
     
     //col.r *= blue;
     float range = pal_uvs.z - pal_uvs.x;
-    float pal_r = (pal_uvs.w - pal_uvs.y);
+    float pal_r = pal_uvs.w - pal_uvs.y;
     vec4 col_new = texture2D(paletteTexture, vec2(pal_uvs.x+col.r*range, pal_uvs.y+palette*pal_r));
     gl_FragColor = col_new;//v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 }

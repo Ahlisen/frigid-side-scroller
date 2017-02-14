@@ -6,6 +6,12 @@ if (inputHorizontal != 0 || inputVertical != 0) {
         movement = movement.walk;
         //TEMP
         can_shoot = true;
+        /*
+        var debris = instance_create(x,y,obj_bounce);
+        debris.speed = random(3)+3;
+        debris.direction = random(360);
+        debris.velocity = random(3)+3;
+        */
     } else {
         multiplier = walkingSpeed;
         movement = movement.walk;

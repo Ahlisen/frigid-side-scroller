@@ -15,6 +15,7 @@
     <sprite>sprites\spr_fir</sprite>
     <sprite>sprites\spr_palette</sprite>
     <sprite>sprites\spr_breath</sprite>
+    <sprite>sprites\spr_smoke</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_bird</sprite>
     <sprites name="boss">
@@ -23,10 +24,12 @@
       <sprite>sprites\spr_boss_fist</sprite>
     </sprites>
     <sprite>sprites\spr_snowfog</sprite>
+    <sprite>sprites\spr_debris</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_mountain_range</background>
     <background>background\bg_snow</background>
+    <background>background\bg_snow_dirty</background>
     <background>background\bg_middle</background>
     <background>background\bg_snowfall</background>
     <background>background\spr_forest</background>
@@ -45,6 +48,7 @@
     <script>scripts\do_nothing.gml</script>
     <script>scripts\death_eye.gml</script>
     <script>scripts\death_boss.gml</script>
+    <script>scripts\create_part_type_sprite.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_tv.shader</shader>
@@ -69,6 +73,8 @@
     <object>objects\obj_boss_eye</object>
     <object>objects\obj_boss_fist</object>
     <object>objects\obj_sfx</object>
+    <object>objects\obj_bounce</object>
+    <object>objects\obj_particle_controller</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tl_boss_fist</timeline>
