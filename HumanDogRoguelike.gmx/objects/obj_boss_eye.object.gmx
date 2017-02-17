@@ -29,7 +29,7 @@
 alarm[1] = random(room_speed*2);
 //image_index = random(image_number);
 
-death = death_eye;
+onHit = death_eye;
 react = do_nothing;
 
 vulnerable = false;

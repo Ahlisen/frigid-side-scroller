@@ -13,6 +13,7 @@
     <sprite>sprites\spr_dog_walk</sprite>
     <sprite>sprites\spr_dog_stand</sprite>
     <sprite>sprites\spr_fir</sprite>
+    <sprite>sprites\spr_alm</sprite>
     <sprite>sprites\spr_palette</sprite>
     <sprite>sprites\spr_breath</sprite>
     <sprite>sprites\spr_smoke</sprite>
@@ -25,14 +26,17 @@
     </sprites>
     <sprite>sprites\spr_snowfog</sprite>
     <sprite>sprites\spr_debris</sprite>
+    <sprite>sprites\spr_solid</sprite>
+    <sprite>sprites\spr_fallen_log</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_mountain_range</background>
+    <background>background\bg_sun_moon</background>
     <background>background\bg_snow</background>
     <background>background\bg_snow_dirty</background>
     <background>background\bg_middle</background>
     <background>background\bg_snowfall</background>
-    <background>background\spr_forest</background>
+    <background>background\bg_forest</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -49,6 +53,8 @@
     <script>scripts\death_eye.gml</script>
     <script>scripts\death_boss.gml</script>
     <script>scripts\create_part_type_sprite.gml</script>
+    <script>scripts\boss_awaken.gml</script>
+    <script>scripts\boss_state_hover.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_tv.shader</shader>
@@ -75,6 +81,8 @@
     <object>objects\obj_sfx</object>
     <object>objects\obj_bounce</object>
     <object>objects\obj_particle_controller</object>
+    <object>objects\obj_world_block</object>
+    <object>objects\obj_fallen_debris</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tl_boss_fist</timeline>

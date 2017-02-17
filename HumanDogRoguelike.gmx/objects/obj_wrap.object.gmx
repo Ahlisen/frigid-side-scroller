@@ -30,6 +30,9 @@ depth = -y;
 image_speed = 0;
 var bird = instance_create(x+random(sprite_width/4)-sprite_width/8,y-random(sprite_yoffset),obj_bird);
     bird.depth = depth-10;
+    
+sprite_index = choose(spr_alm, spr_fir);
+image_xscale = choose(1,-1);
 </string>
           </argument>
         </arguments>
@@ -52,8 +55,8 @@ var bird = instance_create(x+random(sprite_width/4)-sprite_width/8,y-random(spri
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(x &lt; view_xview[0]-sprite_width) {
-    phy_position_x = view_xview[0]+view_wview[0]+sprite_width+random(256);
+            <string>if(x &lt; view_xview[0]-64) {
+    phy_position_x = view_xview[0]+view_wview[0]+random(256)+64;
     phy_position_y = random(view_hview[0]/4)+view_hview*2/3;
     depth = -phy_position_y;
     image_index = 0;

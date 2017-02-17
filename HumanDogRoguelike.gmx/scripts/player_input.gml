@@ -1,4 +1,4 @@
-if(debug){
+if(!gamepad_is_connected(player)){
     inputHorizontal = keyboard_check(ord('D')) - keyboard_check(ord('A'));
     inputVertical = keyboard_check(ord('S')) - keyboard_check(ord('W'));
     inputSprint = keyboard_check_pressed(vk_numpad0);

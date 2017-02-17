@@ -20,16 +20,13 @@ if (inputHorizontal != 0 || inputVertical != 0) {
     inputStrength = min(1,abs(inputHorizontal)+abs(inputVertical));
     velocity = inputStrength * multiplier;
     image_speed = inputStrength * ANIMATION * multiplier * 2;
-    
-    
-    
+
     horizontalSpeed = lengthdir_x(velocity,inputDirection);
     verticalSpeed = lengthdir_y(velocity,inputDirection);
     //BUG: cant get out if push down by physics
-    if(phy_position_y+verticalSpeed < view_hview[0]-20 && phy_position_y+verticalSpeed > view_hview[0]*0.7)
-        phy_position_y += verticalSpeed*PERSPECTIVE;
+    //if(phy_position_y+verticalSpeed < view_hview[0]-20 && phy_position_y+verticalSpeed > view_hview[0]*0.7)
+    phy_position_y += verticalSpeed*PERSPECTIVE;
     phy_position_x += horizontalSpeed;
-    
 } else {
     image_speed = ANIMATION;
     movement = movement.idle;
@@ -60,7 +57,7 @@ if (inputAimHorizontal != 0 || inputAimVertical != 0) {
             bullet.owner = id;
             with(obj_shootable) {
                 if(instance_place(x,y,obj_bullet))
-                    script_execute(death,bullet);
+                    script_execute(onHit,bullet);
                 else
                     script_execute(react);
             }

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_shootable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,35 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-bodyparts = 3;
-hp = bodyparts;
-death = death_boss;
-
-for(var i = 0; i &lt; bodyparts; i++) {
-    eyes[i] = instance_create(x,y,obj_boss_eye);
-    eyes[i].owner = id;
-    eyes[i].angle = random(20*i)+(360/bodyparts)*i;
-    eyes[i].offset = random(8)+28;
-    
-    fists[i] = instance_create(x,y,obj_boss_fist);
-    fists[i].owner = id;
-    fists[i].offset = i*pi*(2/bodyparts);
-}
-
-radius = 64;
-orbitSpeed = 0.001;
-realX = x;
-realY = y;
-xPercentOnScreen = 0.8;
-
-target = choose(obj_human, obj_dog);
-bodyIndex = 0;
-alarm[0] = room_speed*3;
-pattern[0] = 45;
-pattern[1] = 90;
-patternIndex = 0;
-
+            <string>sleeping = true;
+image_speed = 0;
+state = do_nothing;
+onHit = boss_awaken;
+react = boss_awaken;
+depth = -y;
 </string>
           </argument>
         </arguments>
@@ -110,15 +87,7 @@ alarm[0] = pattern[patternIndex]+extra;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle += 0.5;
-depth = -y;
-var change = sin(current_time*0.001);
-//radius = change*16+80;
-//orbitSpeed = change*0.001;
-realX += ((view_xview[0]+view_wview[0]*xPercentOnScreen) - x)*0.02;
-
-y = realY + change*8;
-x = realX;
+            <string>script_execute(state);
 </string>
           </argument>
         </arguments>

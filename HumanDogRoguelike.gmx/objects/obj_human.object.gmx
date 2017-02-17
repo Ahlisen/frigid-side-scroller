@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>///Stats &amp; setup
 state = human_movement;
-debug = false;
 player = 0;
 aimX = 0;
 aimY = 0;
