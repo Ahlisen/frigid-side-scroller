@@ -85,6 +85,6 @@ alarm[0] = room_speed;
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>16,62</point>
-    <point>2,32</point>
+    <point>4,32</point>
   </PhysicsShapePoints>
 </object>

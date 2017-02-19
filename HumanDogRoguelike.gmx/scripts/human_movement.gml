@@ -33,7 +33,7 @@ if (inputHorizontal != 0 || inputVertical != 0) {
 }
 
 //Just for fun
-obj_draw_controller.paletteVal = gamepad_button_value(0, gp_shoulderrb);
+obj_draw_controller.paletteVal = gamepad_button_value(0, gp_shoulderrb)*6;
 
 
 if (inputAimHorizontal != 0 || inputAimVertical != 0) {
@@ -64,6 +64,13 @@ if (inputAimHorizontal != 0 || inputAimVertical != 0) {
             can_shoot = false;
             with(obj_wrap) {
                 image_index = 1;
+            }
+            var dir = point_direction(x,y,aimX,aimY);
+            var dist = distance_to_point(aimX,aimY);
+            for(var i = 0; i <= dist; i+=1) {
+                var _y = y+lengthdir_y(i,dir);//y/aimY*(x-i) +y;
+                var _x = x+lengthdir_x(i,dir);
+                part_particles_create(obj_particle_controller.partSystem,_x,_y,obj_particle_controller.smokeParticle,1);
             }
         }
     } else {

@@ -29,7 +29,7 @@
 image_speed = 0;
 state = do_nothing;
 onHit = boss_awaken;
-react = boss_awaken;
+react = do_nothing;
 depth = -y;
 </string>
           </argument>

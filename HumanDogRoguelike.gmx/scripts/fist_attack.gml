@@ -22,5 +22,11 @@ if(y+velocityY < tarOldY) {
             debris.velocity = random(5)+1;
             part_particles_create(obj_particle_controller.partSystem,x+random(8)-4,y+random(8)-4,obj_particle_controller.fogParticle,1);
         }
+        with(obj_shootable) {
+            if(instance_place(x,y,other))
+                script_execute(onHit,other);
+            else
+                script_execute(react);
+        }
     }
 }

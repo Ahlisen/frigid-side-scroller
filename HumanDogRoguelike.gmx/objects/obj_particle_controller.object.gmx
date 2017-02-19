@@ -30,7 +30,7 @@ partSystem = part_system_create();
 
 //Create particle
 smokeParticle = part_type_create();
-part_type_sprite(smokeParticle, spr_smoke, false, false, true);
+part_type_sprite(smokeParticle, spr_pixel, false, false, true);
 part_type_life(smokeParticle, 120, 180);
 //part_type_orientation(smokeParticle,0,360,0,0,0);
 //part_type_size(smokeParticle,1,1,-0.02,0);
@@ -49,6 +49,14 @@ part_type_direction(fogParticle,0,360,0,0);
 //part_type_alpha2(smokeParticle, 0.5, 1);
 //part_type_blend(smokeParticle,true);
 //part_type_colour_mix(fogParticle,$bbb,$fff);
+
+bloodParticle = part_type_create();
+part_type_sprite(bloodParticle, spr_pixel, false, false, false);
+part_type_life(bloodParticle, 60, 120);
+part_type_speed(bloodParticle,4,7,0,0);
+part_type_direction(bloodParticle,0,180,0,0);
+part_type_gravity(bloodParticle,GRAVITY,270);
+part_type_colour_mix(bloodParticle,$000,$fff);
 </string>
           </argument>
         </arguments>
@@ -77,6 +85,7 @@ part_system_destroy(partSystem);
 ///Destroy particles
 part_type_destroy(smokeParticle);
 part_type_destroy(fogParticle);
+part_type_destroy(bloodParticle);
 </string>
           </argument>
         </arguments>

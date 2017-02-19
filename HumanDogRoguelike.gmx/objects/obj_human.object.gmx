@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_mob</parentName>
+  <parentName>obj_shootable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Stats &amp; setup
-state = human_movement;
+normalState = human_movement;
+state = normalState;
 player = 0;
 aimX = 0;
 aimY = 0;
@@ -37,6 +38,10 @@ movement = movement.walk;
 walkingSpeed = 0.5;
 runningSpeed = 1;
 can_shoot = true;
+weakened = false;
+
+onHit = knockdown_weaken;
+react = do_nothing;
 
 //Could be turned off for ragdoll?
 phy_fixed_rotation = true;
@@ -71,6 +76,33 @@ sprite[movement.walk, face.l] = spr_human_walk;
 
 sprite[movement.aim, face.r] = spr_human_aim;
 sprite[movement.aim, face.l] = spr_human_aim;
+
+sprite[movement.knockdown, face.r] = spr_human_knockdown;
+sprite[movement.knockdown, face.l] = spr_human_knockdown;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Resume normal state
+state = normalState;
 </string>
           </argument>
         </arguments>

@@ -25,16 +25,50 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//surface_resize(application_surface,1000,500)
-
+            <string>
 application_surface_draw_enable(false);
 palette = shader_get_uniform( shd_tv, "palette");
 pal_uvs = shader_get_uniform( shd_tv, "pal_uvs");
-paletteVal = 1;
+
+paletteVal = 0;
 
 t_sampler = shader_get_sampler_index(shd_tv, "paletteTexture");
 spr = sprite_get_texture(spr_palette, 0);
 tex = sprite_get_uvs(spr_palette, 0);
+
+resolution = shader_get_uniform(shd_tv,"resolution");
+
+tarX = 0;
+tarY = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(background_y[0] &lt; 130){
+tarX = (background_x[0]+background_width[0]/2-view_xview[0])*obj_display_manager.zoom;
+tarY = (background_y[0]+background_height[0]/2-view_yview[0])*obj_display_manager.zoom;
+} else {
+tarX = (obj_human.x-view_xview[0])*obj_display_manager.zoom;
+tarY = (obj_human.y-view_yview[0])*obj_display_manager.zoom;
+}
 </string>
           </argument>
         </arguments>
@@ -58,11 +92,11 @@ tex = sprite_get_uvs(spr_palette, 0);
           <argument>
             <kind>1</kind>
             <string>
-
 shader_set(shd_tv);
 texture_set_stage(t_sampler, spr);
 shader_set_uniform_f(palette, paletteVal);
 shader_set_uniform_f_array(pal_uvs, tex);
+shader_set_uniform_f(resolution,tarX,tarY);
 draw_surface( application_surface, 0, 0 );
 shader_reset();
 </string>
@@ -91,7 +125,7 @@ shader_reset();
 draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-draw_text(5,32,gamepad_button_value(0, gp_shoulderrb));
+draw_text(5,32,gamepad_button_value(0, gp_shoulderrb)*6);
 </string>
           </argument>
         </arguments>

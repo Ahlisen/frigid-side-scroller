@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Display Properties
+//window_set_fullscreen(true);
 ideal_width = 0;
 ideal_height = 270;
 zoom = 3;
@@ -99,7 +100,8 @@ room_goto(room_next(room));
 enum movement {
     idle = 0,
     walk = 1,
-    aim = 2
+    aim = 2,
+    knockdown = 3
 }
 
 enum face {
@@ -241,6 +243,9 @@ if(keyboard_check_pressed(ord("Z")))
   alarm[0] = 1;
 }
 
+//window_get_fullscreen()
+
+//Check for fullscreen and resize the window and surface manually
 </string>
           </argument>
         </arguments>

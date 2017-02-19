@@ -25,17 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-player = 1;
+            <string>player = 1;
 debug = false;
-state = dog_movement;
-
+normalState = dog_movement;
+state = normalState;
 
 face = 0;
 movement = movement.walk;
 
 walkingSpeed = 0.75;
 runningSpeed = 1.5;
+weakened = false;
+
+react = do_nothing;
+onHit = knockdown_weaken;
 </string>
           </argument>
         </arguments>
@@ -63,6 +66,33 @@ sprite[movement.idle, face.l] = spr_dog_idle;
 
 sprite[movement.walk, face.r] = spr_dog_walk;
 sprite[movement.walk, face.l] = spr_dog_walk;
+
+sprite[movement.knockdown, face.r] = spr_dog_idle;
+sprite[movement.knockdown, face.l] = spr_dog_idle;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Resume normal state
+state = normalState;
 </string>
           </argument>
         </arguments>

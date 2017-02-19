@@ -28,6 +28,7 @@
             <string>react = flee_bird;
 onHit = death_basic;
 alarm[0] = room_speed;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
