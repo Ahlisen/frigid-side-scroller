@@ -21,6 +21,7 @@
     <sprite>sprites\spr_smoke</sprite>
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_shadow_small</sprite>
+    <sprite>sprites\spr_shadow_tiny</sprite>
     <sprite>sprites\spr_bird</sprite>
     <sprites name="boss">
       <sprite>sprites\spr_boss_body</sprite>
@@ -34,6 +35,8 @@
     <sprite>sprites\spr_solid</sprite>
     <sprite>sprites\spr_fallen_log</sprite>
     <sprite>sprites\spr_pixel</sprite>
+    <sprite>sprites\spr_bullet_hitbox</sprite>
+    <sprite>sprites\spr_hitbox</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_mountain_range</background>
@@ -62,6 +65,10 @@
     <script>scripts\boss_awaken.gml</script>
     <script>scripts\boss_state_hover.gml</script>
     <script>scripts\knockdown_weaken.gml</script>
+    <script>scripts\bird_fly.gml</script>
+    <script>scripts\bird_fall.gml</script>
+    <script>scripts\start_death_state.gml</script>
+    <script>scripts\flying_hitbox_hit.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_tv.shader</shader>
@@ -71,6 +78,7 @@
     <font>fonts\fnt_normal</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_debugger</object>
     <object>objects\obj_human</object>
     <object>objects\obj_dog</object>
     <object>objects\obj_wrap</object>
@@ -90,6 +98,7 @@
     <object>objects\obj_particle_controller</object>
     <object>objects\obj_world_block</object>
     <object>objects\obj_fallen_debris</object>
+    <object>objects\obj_flying_hitbox</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tl_boss_fist</timeline>

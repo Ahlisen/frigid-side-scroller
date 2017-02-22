@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
+            <string>event_inherited();
+image_speed = 0;
 alarm[1] = random(room_speed*2);
 //image_index = random(image_number);
 
@@ -106,7 +107,8 @@ image_speed = -ANIMATION;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = owner.x + lengthdir_x(offset, owner.image_angle+angle);
+            <string>///Sit on owner
+x = owner.x + lengthdir_x(offset, owner.image_angle+angle);
 y = owner.y - owner.z + lengthdir_y(offset, owner.image_angle+angle);
 image_angle = owner.image_angle+angle;
 depth = owner.depth-1;

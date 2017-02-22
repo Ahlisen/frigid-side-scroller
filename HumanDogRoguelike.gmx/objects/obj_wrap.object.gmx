@@ -28,8 +28,9 @@
             <string>alarm[0] = room_speed;
 depth = -y;
 image_speed = 0;
-var bird = instance_create(x+random(sprite_width/4)-sprite_width/8,y-random(sprite_yoffset),obj_bird);
-    bird.depth = depth-10;
+var bird = instance_create(x+random(sprite_width/4)-sprite_width/8,y,obj_bird);
+    bird.depth = depth-1;
+    bird.z = random(sprite_yoffset/3)+sprite_yoffset/2;
     
 sprite_index = choose(spr_alm, spr_fir);
 image_xscale = choose(1,-1);
@@ -61,8 +62,9 @@ image_xscale = choose(1,-1);
     depth = -phy_position_y;
     image_index = 0;
     if(random(1) &gt; 0.5) {
-        var bird = instance_create(phy_position_x+random(sprite_width/4)-sprite_width/8,phy_position_y-sprite_yoffset*0.8,obj_bird);
-        bird.depth = depth-10;
+        var bird = instance_create(phy_position_x+random(sprite_width/4)-sprite_width/8,phy_position_y,obj_bird);
+        bird.depth = depth-1;
+        bird.z = random(sprite_yoffset/3)+sprite_yoffset/2;
     }
 }
 alarm[0] = room_speed;

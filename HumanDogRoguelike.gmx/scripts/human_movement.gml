@@ -56,10 +56,12 @@ if (inputAimHorizontal != 0 || inputAimVertical != 0) {
             var bullet = instance_create(aimX,aimY, obj_bullet);
             bullet.owner = id;
             with(obj_shootable) {
-                if(instance_place(x,y,obj_bullet))
-                    script_execute(onHit,bullet);
-                else
-                    script_execute(react);
+                if(!dead){
+                    if(instance_place(x,y,obj_bullet))
+                        script_execute(onHit,bullet);
+                    else
+                        script_execute(react);
+                }
             }
             can_shoot = false;
             with(obj_wrap) {

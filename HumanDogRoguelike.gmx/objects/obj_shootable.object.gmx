@@ -25,9 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>///on hit and reactions
+event_inherited();
 onHit = death_basic;
 react = flee_basic;
+dead = false;
+weakened = false;
 </string>
           </argument>
         </arguments>
