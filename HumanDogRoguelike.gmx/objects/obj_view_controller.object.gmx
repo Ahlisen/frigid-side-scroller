@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -35,6 +35,8 @@ background_y[4] = regularOffset;
 
 screenShakeX = 0;
 screenShakeY = 0;
+
+
 /*
 background_index[0] = bg_mountain_range;
 background_index[1] = bg_forest;
@@ -134,6 +136,32 @@ view_yport[1] = obj_human.aimY - view_yview[0] - view_hport[1]/2;
 view_xview[1] = view_xport[1]+view_xview[0] + view_wview[1]/2;
 view_yview[1] = view_yport[1]+view_yview[0] + view_hview[1]/2;
 
+//view_angle[0] = gamepad_button_value(0, gp_shoulderrb)*30;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw crosshair
+if(view_visible[1])
+    draw_sprite(spr_crosshair,0,view_xview[1]+ view_wview[1]/2, view_yview[1]+ view_hview[1]/2);
 </string>
           </argument>
         </arguments>

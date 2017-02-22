@@ -53,10 +53,10 @@ part_type_direction(fogParticle,0,360,0,0);
 bloodParticle = part_type_create();
 part_type_sprite(bloodParticle, spr_pixel, false, false, false);
 part_type_life(bloodParticle, 60, 120);
-part_type_speed(bloodParticle,4,7,0,0);
+part_type_speed(bloodParticle,1,7,0,0);
 part_type_direction(bloodParticle,0,180,0,0);
 part_type_gravity(bloodParticle,GRAVITY,270);
-part_type_colour_mix(bloodParticle,$000,$fff);
+//part_type_colour_mix(bloodParticle,$000,$fff);
 </string>
           </argument>
         </arguments>

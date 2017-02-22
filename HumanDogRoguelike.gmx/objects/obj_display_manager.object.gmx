@@ -200,6 +200,35 @@ debug = false;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reduce palette effect
+if(paletteVal&gt;0){
+    paletteVal-= 0.02;
+    alarm[2] = 1;
+} else {
+    paletteVal = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -377,8 +406,6 @@ draw_text(5,5,"Palette:"+string(paletteVal)+"#Quality:"+string(zoom));
 draw_set_halign(fa_right);
 draw_set_valign(fa_bottom);
 draw_text(display_get_gui_width()-5,display_get_gui_height()-5,"Bottom Right");
-
-
 </string>
           </argument>
         </arguments>

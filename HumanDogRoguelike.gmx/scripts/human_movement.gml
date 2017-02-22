@@ -32,8 +32,7 @@ if (inputHorizontal != 0 || inputVertical != 0) {
     movement = movement.idle;
 }
 
-//Just for fun
-obj_display_manager.paletteVal = gamepad_button_value(0, gp_shoulderrb)*6;
+
 
 
 if (inputAimHorizontal != 0 || inputAimVertical != 0) {
@@ -44,6 +43,9 @@ if (inputAimHorizontal != 0 || inputAimVertical != 0) {
     aimX = clamp(aimX,view_xview[0]+aimBorder,view_xview[0]+view_wview[0]-aimBorder);
     aimY = clamp(aimY,view_yview[0]+aimBorder,view_yview[0]+view_hview[0]-aimBorder);
     view_visible[1] = true;
+    
+    //Just for fun
+    obj_display_manager.paletteVal = gamepad_button_value(0, gp_shoulderrb)*6;
     
     if(triggerValue > 0.95) {
         if(can_shoot) {
@@ -66,14 +68,14 @@ if (inputAimHorizontal != 0 || inputAimVertical != 0) {
             can_shoot = false;
             with(obj_wrap) {
                 image_index = 1;
-            }
+            }/*
             var dir = point_direction(x,y,aimX,aimY);
             var dist = distance_to_point(aimX,aimY);
             for(var i = 0; i <= dist; i+=1) {
                 var _y = y+lengthdir_y(i,dir);//y/aimY*(x-i) +y;
                 var _x = x+lengthdir_x(i,dir);
                 part_particles_create(obj_particle_controller.partSystem,_x,_y,obj_particle_controller.smokeParticle,1);
-            }
+            }*/
         }
     } else {
         gamepad_set_vibration(player, 0, 0);

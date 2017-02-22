@@ -35,9 +35,9 @@ varying vec2 FragCoord;
 uniform vec2 resolution;
 /*
 vec4 circle(vec2 uv, vec2 pos, float rad, vec3 col) {
-	float d = length(pos - uv) - rad;
-	float t = clamp(d, 0.0, 1.0);
-	return vec4(col, 1.0 - t);
+float d = length(pos - uv) - rad;
+float t = clamp(d, 0.0, 1.0);
+return vec4(col, 1.0 - t);
 }
 //circle(uvs,center,radius,vec3(0.0,1.0,1.0));
 */
@@ -55,7 +55,7 @@ void main()
     vec4 col_new = texture2D(paletteTexture, vec2(pal_uvs.x+col.r*range, pal_uvs.y+pal_r*palette));
     vec4 col_newer = texture2D(paletteTexture, vec2(pal_uvs.x+col.r*range, pal_uvs.y+pal_r*(palette+1.0)));
     float modu = mod(palette,1.0);
-    //col_new.rgb = mix(col_new.rgb,col_newer.rgb,modu);
+    col_new.rgb = mix(col_new.rgb,col_newer.rgb,modu);
     
     //gl_FragColor = col_new;//v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 
