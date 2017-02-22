@@ -158,6 +158,41 @@ room_set_background(1,6,true,true,bg_snowfall,0,0,true,true,0,0,1);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Shader init
+application_surface_draw_enable(false);
+palette = shader_get_uniform( shd_tv, "palette");
+pal_uvs = shader_get_uniform( shd_tv, "pal_uvs");
+
+paletteVal = 0;
+
+t_sampler = shader_get_sampler_index(shd_tv, "paletteTexture");
+spr = sprite_get_texture(spr_palette, 0);
+tex = sprite_get_uvs(spr_palette, 0);
+
+resolution = shader_get_uniform(shd_tv,"resolution");
+
+tarX = 0;
+tarY = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Debug mode
 debug = false;
 </string>
@@ -237,7 +272,7 @@ if(keyboard_check_pressed(ord("Z")))
   
   if(zoom&gt;max_zoom)
     zoom=1;
-  
+      
   window_set_size(ideal_width*zoom,ideal_height*zoom);
   surface_resize(application_surface,ideal_width*zoom,ideal_height*zoom);
   alarm[0] = 1;
@@ -246,6 +281,71 @@ if(keyboard_check_pressed(ord("Z")))
 //window_get_fullscreen()
 
 //Check for fullscreen and resize the window and surface manually
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move light source
+if(room == 1) {
+    if(background_y[0] &lt; 130){
+    tarX = (background_x[0]+background_width[0]/2-view_xview[0])*zoom;
+    tarY = (background_y[0]+background_height[0]/2-view_yview[0])*zoom;
+    } else {
+    tarX = (obj_human.x-view_xview[0])*zoom;
+    tarY = (obj_human.y-view_yview[0])*zoom;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="77">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw application surface with shader
+shader_set(shd_tv);
+texture_set_stage(t_sampler, spr);
+shader_set_uniform_f(palette, paletteVal);
+shader_set_uniform_f_array(pal_uvs, tex);
+shader_set_uniform_f(resolution,tarX,tarY);
+if(window_get_fullscreen()){
+    draw_surface_stretched( application_surface, 0, 0, window_get_width(), window_get_height());
+} else {
+    draw_surface( application_surface, 0, 0);
+}
+
+shader_reset();
 </string>
           </argument>
         </arguments>
@@ -272,11 +372,13 @@ if(keyboard_check_pressed(ord("Z")))
 draw_set_color(c_black);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-draw_text(5,5,"Top");
+draw_text(5,5,"Palette:"+string(paletteVal)+"#Quality:"+string(zoom));
 
 draw_set_halign(fa_right);
 draw_set_valign(fa_bottom);
 draw_text(display_get_gui_width()-5,display_get_gui_height()-5,"Bottom Right");
+
+
 </string>
           </argument>
         </arguments>

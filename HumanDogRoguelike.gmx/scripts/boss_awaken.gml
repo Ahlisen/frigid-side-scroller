@@ -18,7 +18,7 @@ for(var i = 0; i < bodyparts; i++) {
 radius = 64;
 orbitSpeed = 0.001;
 realX = x;
-realY = y;
+realZ = z;
 xPercentOnScreen = 0.8;
 
 target = choose(obj_human, obj_dog);

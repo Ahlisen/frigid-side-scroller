@@ -20,11 +20,14 @@
     <sprite>sprites\spr_breath</sprite>
     <sprite>sprites\spr_smoke</sprite>
     <sprite>sprites\spr_bullet</sprite>
+    <sprite>sprites\spr_shadow_small</sprite>
     <sprite>sprites\spr_bird</sprite>
     <sprites name="boss">
       <sprite>sprites\spr_boss_body</sprite>
+      <sprite>sprites\spr_boss_shadow</sprite>
       <sprite>sprites\spr_boss_eye</sprite>
       <sprite>sprites\spr_boss_fist</sprite>
+      <sprite>sprites\spr_boss_fist_shadow</sprite>
     </sprites>
     <sprite>sprites\spr_snowfog</sprite>
     <sprite>sprites\spr_debris</sprite>

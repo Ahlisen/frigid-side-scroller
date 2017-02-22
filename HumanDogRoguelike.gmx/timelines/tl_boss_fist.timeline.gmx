@@ -48,7 +48,7 @@ arg0 = owner.target;
           <argument>
             <kind>1</kind>
             <string>///Wait
-state = noone;
+state = do_nothing;
 arg0 = noone;
 </string>
           </argument>
@@ -104,8 +104,11 @@ arg0 = oldY;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///return
-
+            <string>///Orbit
+state = fist_orbit;
+arg0 = noone;
+timeline_running = false;
+attacked = false;
 </string>
           </argument>
         </arguments>
@@ -131,12 +134,7 @@ arg0 = oldY;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Orbit
-state = fist_orbit;
-arg0 = noone;
-timeline_running = false;
-attacked = false;
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

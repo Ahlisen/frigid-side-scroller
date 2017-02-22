@@ -56,13 +56,12 @@
     <instance objName="obj_wrap" x="112" y="256" name="inst_93961BF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wrap" x="48" y="256" name="inst_296848BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wrap" x="80" y="256" name="inst_987219C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_draw_controller" x="0" y="0" name="inst_F3F74F7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_view_controller" x="16" y="0" name="inst_A7E51A87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wrap" x="80" y="192" name="inst_DE308041" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wrap" x="128" y="176" name="inst_65E856B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wrap" x="176" y="192" name="inst_C88249F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wrap" x="224" y="176" name="inst_554459A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boss" x="416" y="184" name="inst_0A0F965F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boss" x="416" y="192" name="inst_0A0F965F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_particle_controller" x="32" y="0" name="inst_666DA2CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_world_block" x="0" y="168" name="inst_30C00927" locked="0" code="" scaleX="15" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_world_block" x="0" y="256" name="inst_FD3AC618" locked="0" code="" scaleX="15" scaleY="0.5" colour="4294967295" rotation="0"/>

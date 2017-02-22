@@ -33,7 +33,7 @@ if (inputHorizontal != 0 || inputVertical != 0) {
 }
 
 //Just for fun
-obj_draw_controller.paletteVal = gamepad_button_value(0, gp_shoulderrb)*6;
+obj_display_manager.paletteVal = gamepad_button_value(0, gp_shoulderrb)*6;
 
 
 if (inputAimHorizontal != 0 || inputAimVertical != 0) {

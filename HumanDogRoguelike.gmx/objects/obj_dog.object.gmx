@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>player = 1;
+            <string>///Init
+event_inherited();
+player = 1;
 debug = false;
 normalState = dog_movement;
 state = normalState;
@@ -116,34 +118,11 @@ state = normalState;
           <argument>
             <kind>1</kind>
             <string>///State &amp; depth
-
 script_execute(state);
 
 depth = -y;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw self
-draw_sprite(sprite[movement, face], image_index, x, y);
+
+sprite_index = sprite[movement, face];
 </string>
           </argument>
         </arguments>

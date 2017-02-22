@@ -31,6 +31,7 @@ state = do_nothing;
 onHit = boss_awaken;
 react = do_nothing;
 depth = -y;
+z = 0;
 </string>
           </argument>
         </arguments>
@@ -88,6 +89,36 @@ alarm[0] = pattern[patternIndex]+extra;
           <argument>
             <kind>1</kind>
             <string>script_execute(state);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw self &amp; shadow
+
+//Draw Shadow
+draw_sprite_ext(spr_boss_shadow,0,x,y,1,1,0,image_blend,0.5);
+
+//Draw Self
+draw_sprite_ext(spr_boss_body, image_index, x, y-z, image_xscale, image_yscale,image_angle,image_blend,image_alpha);
+
 </string>
           </argument>
         </arguments>

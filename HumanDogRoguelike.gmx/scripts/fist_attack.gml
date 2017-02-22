@@ -1,15 +1,13 @@
-var tarOldY = argument0;
-
-if(y+velocityY < tarOldY) {
-    y += velocityY;
-    velocityY += GRAVITY;
+if(z - velocity > 0) {
+    z -= velocity;
+    velocity += GRAVITY;
 } else {
     if(!attacked) {
         image_index = 1;
-        y = tarOldY;
-        velocityY = 0;
+        velocity = 0;
+        z = 0;
         var sfx = instance_create(x,y,obj_sfx);
-        depth = -y;
+        depth = -y-2;
         sfx.depth = depth-2;
         attacked = true;
         obj_view_controller.screenShakeX = 1;
