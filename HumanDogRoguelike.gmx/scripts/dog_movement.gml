@@ -14,7 +14,7 @@ if (inputHorizontal != 0 || inputVertical != 0) {
     image_speed = inputStrength * ANIMATION * multiplier * 2;
     
     //Just for fun
-    obj_draw_controller.blueVal = 1 + velocity;
+    //obj_draw_controller.blueVal = 1 + velocity;
     
     horizontalSpeed = lengthdir_x(velocity,inputDirection);
     verticalSpeed = lengthdir_y(velocity,inputDirection);

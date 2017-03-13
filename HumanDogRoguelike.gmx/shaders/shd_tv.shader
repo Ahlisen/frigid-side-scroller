@@ -32,7 +32,8 @@ uniform sampler2D paletteTexture;
 uniform vec4 pal_uvs;
 
 varying vec2 FragCoord;
-uniform vec2 resolution;
+uniform vec2 center;
+uniform float radius;
 /*
 vec4 circle(vec2 uv, vec2 pos, float rad, vec3 col) {
 float d = length(pos - uv) - rad;
@@ -59,11 +60,11 @@ void main()
     
     //gl_FragColor = col_new;//v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 
-    float radius = 1.0 * resolution.y;
-    vec2 center = resolution.xy;
+    //float radius = 1.0 * resolution.y;
+    //vec2 center = resolution.xy;
     
     vec2 p = (FragCoord.xy - center) / radius;
-    float r = sqrt(dot(p, p));
+    float r = min(1.0,sqrt(dot(p, p)));
     gl_FragColor = mix(col_new,col_newer,r);
 
 }

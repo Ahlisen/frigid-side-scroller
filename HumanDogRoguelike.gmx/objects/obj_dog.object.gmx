@@ -63,14 +63,14 @@ onHit = knockdown_weaken;
             <kind>1</kind>
             <string>///Sprite array with enum
 
-sprite[movement.idle, face.r] = spr_dog_idle;
-sprite[movement.idle, face.l] = spr_dog_idle;
+sprite[movement.idle, face.up] = spr_dog_idle;
+sprite[movement.idle, face.down] = spr_dog_idle;
 
-sprite[movement.walk, face.r] = spr_dog_walk;
-sprite[movement.walk, face.l] = spr_dog_walk;
+sprite[movement.walk, face.up] = spr_dog_walk;
+sprite[movement.walk, face.down] = spr_dog_walk;
 
-sprite[movement.knockdown, face.r] = spr_dog_idle;
-sprite[movement.knockdown, face.l] = spr_dog_idle;
+sprite[movement.knockdown, face.up] = spr_dog_idle;
+sprite[movement.knockdown, face.down] = spr_dog_idle;
 </string>
           </argument>
         </arguments>

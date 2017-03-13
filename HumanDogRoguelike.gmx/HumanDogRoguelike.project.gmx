@@ -12,6 +12,8 @@
     <sprite>sprites\spr_human_walk</sprite>
     <sprite>sprites\spr_dog_idle</sprite>
     <sprite>sprites\spr_dog_walk</sprite>
+    <sprite>sprites\spr_dog_walk_down</sprite>
+    <sprite>sprites\spr_dog_walk_up</sprite>
     <sprite>sprites\spr_dog_stand</sprite>
     <sprite>sprites\spr_fir</sprite>
     <sprite>sprites\spr_alm</sprite>
@@ -38,10 +40,12 @@
     <sprite>sprites\spr_bullet_hitbox</sprite>
     <sprite>sprites\spr_hitbox</sprite>
     <sprite>sprites\spr_crosshair</sprite>
+    <sprite>sprites\spr_grass</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_mountain_range</background>
     <background>background\bg_sun_moon</background>
+    <background>background\bg_snow3</background>
     <background>background\bg_snow</background>
     <background>background\bg_snow_dirty</background>
     <background>background\bg_middle</background>
@@ -50,27 +54,34 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\player_input.gml</script>
+    <scripts name="helper_scripts">
+      <script>scripts\do_nothing.gml</script>
+      <script>scripts\player_input.gml</script>
+      <script>scripts\get_face.gml</script>
+      <script>scripts\sleep.gml</script>
+      <script>scripts\create_part_type_sprite.gml</script>
+      <script>scripts\animation_hit_frame.gml</script>
+    </scripts>
     <script>scripts\human_movement.gml</script>
     <script>scripts\dog_movement.gml</script>
     <script>scripts\death_basic.gml</script>
     <script>scripts\flee_basic.gml</script>
     <script>scripts\flee_bird.gml</script>
-    <script>scripts\fist_prepare.gml</script>
-    <script>scripts\fist_orbit.gml</script>
-    <script>scripts\fist_attack.gml</script>
-    <script>scripts\do_nothing.gml</script>
-    <script>scripts\death_eye.gml</script>
-    <script>scripts\death_boss.gml</script>
-    <script>scripts\create_part_type_sprite.gml</script>
-    <script>scripts\boss_awaken.gml</script>
-    <script>scripts\boss_state_hover.gml</script>
+    <scripts name="boss_scripts">
+      <script>scripts\boss_awaken.gml</script>
+      <script>scripts\boss_state_hover.gml</script>
+      <script>scripts\death_boss.gml</script>
+      <script>scripts\fist_attack.gml</script>
+      <script>scripts\fist_prepare.gml</script>
+      <script>scripts\fist_orbit.gml</script>
+      <script>scripts\death_eye.gml</script>
+    </scripts>
     <script>scripts\knockdown_weaken.gml</script>
     <script>scripts\bird_fly.gml</script>
     <script>scripts\bird_fall.gml</script>
     <script>scripts\start_death_state.gml</script>
     <script>scripts\flying_hitbox_hit.gml</script>
-    <script>scripts\sleep.gml</script>
+    <script>scripts\animal_fleeing.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_tv.shader</shader>
@@ -101,6 +112,7 @@
     <object>objects\obj_world_block</object>
     <object>objects\obj_fallen_debris</object>
     <object>objects\obj_flying_hitbox</object>
+    <object>objects\obj_wolf</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tl_boss_fist</timeline>

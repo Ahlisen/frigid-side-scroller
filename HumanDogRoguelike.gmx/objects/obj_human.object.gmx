@@ -69,17 +69,17 @@ phy_fixed_rotation = true;
             <kind>1</kind>
             <string>///Sprite array with enum
 
-sprite[movement.idle, face.r] = spr_human_idle;
-sprite[movement.idle, face.l] = spr_human_idle;
+sprite[movement.idle, face.up] = spr_human_idle;
+sprite[movement.idle, face.down] = spr_human_idle;
 
-sprite[movement.walk, face.r] = spr_human_walk;
-sprite[movement.walk, face.l] = spr_human_walk;
+sprite[movement.walk, face.up] = spr_human_walk;
+sprite[movement.walk, face.down] = spr_human_walk;
 
-sprite[movement.aim, face.r] = spr_human_aim;
-sprite[movement.aim, face.l] = spr_human_aim;
+sprite[movement.aim, face.up] = spr_human_aim;
+sprite[movement.aim, face.down] = spr_human_aim;
 
-sprite[movement.knockdown, face.r] = spr_human_knockdown;
-sprite[movement.knockdown, face.l] = spr_human_knockdown;
+sprite[movement.knockdown, face.up] = spr_human_knockdown;
+sprite[movement.knockdown, face.down] = spr_human_knockdown;
 </string>
           </argument>
         </arguments>
@@ -157,6 +157,7 @@ script_execute(state);
 depth = -y;
 
 sprite_index = sprite[movement, face];
+
 </string>
           </argument>
         </arguments>

@@ -127,8 +127,21 @@ background_y[6] += 0.5+sin(current_time*0.0005)*0.1;
 screenShakeX = mouse_x * 0.1;
 screenShakeY = mouse_y * 0.1;
 */
-view_xview[0] = obj_human.x - view_wview[0]/3 + random_range(-screenShakeX,screenShakeX);
-view_yview[0] = obj_human.y - view_hview[0]/1.05 + random_range(-screenShakeY,screenShakeY);
+/*if(view_visible[1]){
+    view_xview[0] = (obj_human.x+obj_human.aimX)/2 - view_wview[0]/3 + random_range(-screenShakeX,screenShakeX);
+    view_yview[0] = obj_human.y - view_hview[0]/1.05 + random_range(-screenShakeY,screenShakeY);
+} else {*/
+    //var dir = point_direction(obj_human.x,obj_human.y,obj_human.aimX,obj_human.aimY);
+    //var recoil = -20;
+    if(obj_human.x &gt; view_xview[0]+view_wview[0]/5){
+        view_xview[0] += (obj_human.x - view_xview[0]-view_wview[0]/5)*0.1 + random_range(-screenShakeX,screenShakeX);
+        //view_xview[0] = obj_human.x - view_wview[0]/3 + random_range(-screenShakeX,screenShakeX); //+ lengthdir_x(recoil,dir);
+    } else {
+        
+    }
+    
+    view_yview[0] = obj_human.y - view_hview[0]/1.05 + random_range(-screenShakeY,screenShakeY);//+ lengthdir_y(recoil,dir);;
+//}
 
 view_xport[1] = obj_human.aimX - view_xview[0] - view_wport[1]/2;
 view_yport[1] = obj_human.aimY - view_yview[0] - view_hport[1]/2;

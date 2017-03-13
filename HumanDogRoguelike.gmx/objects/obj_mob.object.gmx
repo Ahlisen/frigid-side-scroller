@@ -28,7 +28,9 @@
             <string>///Set shadow &amp; z &amp; state
 myShadow = spr_shadow_small;
 z = 0;
-state = do_nothing;
+oldState = do_nothing;
+state = oldState;
+
 </string>
           </argument>
         </arguments>
@@ -51,7 +53,8 @@ state = do_nothing;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(state);
+            <string>///State and depth
+script_execute(state);
 depth = -y;
 </string>
           </argument>
@@ -111,7 +114,7 @@ draw_sprite_ext(sprite_index, image_index, x, y-z, image_xscale, image_yscale,im
       </action>
     </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>

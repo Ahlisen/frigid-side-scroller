@@ -1,7 +1,9 @@
 if(!gamepad_is_connected(player)){
     inputHorizontal = keyboard_check(ord('D')) - keyboard_check(ord('A'));
     inputVertical = keyboard_check(ord('S')) - keyboard_check(ord('W'));
-    inputSprint = keyboard_check_pressed(vk_numpad0);
+    inputAimHorizontal = keyboard_check(ord('J')) - keyboard_check(ord('L'));
+    inputAimVertical = keyboard_check(ord('K')) - keyboard_check(ord('I'));
+    inputSprint = keyboard_check(vk_shift);
 } else {
     gamepad_set_axis_deadzone(player, .25);
     inputHorizontal = gamepad_axis_value(player, gp_axislh);

@@ -105,8 +105,8 @@ enum movement {
 }
 
 enum face {
-    r = 0,
-    l = 1
+    up = 0,
+    down = 2
 }
 </string>
           </argument>
@@ -169,8 +169,10 @@ t_sampler = shader_get_sampler_index(shd_tv, "paletteTexture");
 spr = sprite_get_texture(spr_palette, 0);
 tex = sprite_get_uvs(spr_palette, 0);
 
-resolution = shader_get_uniform(shd_tv,"resolution");
+center = shader_get_uniform(shd_tv,"center");
+radius = shader_get_uniform(shd_tv,"radius");
 
+rad = 100;
 tarX = 0;
 tarY = 0;
 </string>
@@ -340,6 +342,35 @@ if(room == 1) {
     tarY = (obj_human.y-view_yview[0])*zoom;
     }
 }
+
+//For testing
+paletteVal = gamepad_button_value(0, gp_shoulderrb)*6;
+rad = gamepad_button_value(0, gp_shoulderlb)*window_get_height();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(room == 1) {
+    
+}
 </string>
           </argument>
         </arguments>
@@ -367,13 +398,13 @@ shader_set(shd_tv);
 texture_set_stage(t_sampler, spr);
 shader_set_uniform_f(palette, paletteVal);
 shader_set_uniform_f_array(pal_uvs, tex);
-shader_set_uniform_f(resolution,tarX,tarY);
+shader_set_uniform_f(center,tarX,tarY);
+shader_set_uniform_f(radius,rad);
 if(window_get_fullscreen()){
     draw_surface_stretched( application_surface, 0, 0, window_get_width(), window_get_height());
 } else {
     draw_surface( application_surface, 0, 0);
 }
-
 shader_reset();
 </string>
           </argument>
