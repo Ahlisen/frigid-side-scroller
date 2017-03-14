@@ -8,4 +8,5 @@ if z-velocity > 0 {
     velocity = 0;
     dead = true;
     state = do_nothing;
+    image_speed = 0;
 }

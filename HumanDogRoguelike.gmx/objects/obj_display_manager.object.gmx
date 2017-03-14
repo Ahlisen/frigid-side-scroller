@@ -164,6 +164,7 @@ palette = shader_get_uniform( shd_tv, "palette");
 pal_uvs = shader_get_uniform( shd_tv, "pal_uvs");
 
 paletteVal = 0;
+paletteModifier = 0;
 
 t_sampler = shader_get_sampler_index(shd_tv, "paletteTexture");
 spr = sprite_get_texture(spr_palette, 0);
@@ -332,7 +333,7 @@ if(keyboard_check_pressed(ord("Z")))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Move light source
+            <string>///Control light source
 if(room == 1) {
     if(background_y[0] &lt; 130){
     tarX = (background_x[0]+background_width[0]/2-view_xview[0])*zoom;
@@ -341,11 +342,15 @@ if(room == 1) {
     tarX = (obj_human.x-view_xview[0])*zoom;
     tarY = (obj_human.y-view_yview[0])*zoom;
     }
+    rad = abs(obj_view_controller.time*window_get_height()*2);
+    paletteModifier += gamepad_button_check_pressed(0, gp_shoulderr)-gamepad_button_check_pressed(0, gp_shoulderl);
+    paletteVal = paletteModifier + 1 - abs(obj_view_controller.time);
 }
 
-//For testing
-paletteVal = gamepad_button_value(0, gp_shoulderrb)*6;
-rad = gamepad_button_value(0, gp_shoulderlb)*window_get_height();
+//paletteVal = gamepad_button_value(0, gp_shoulderrb)*6;
+//rad = gamepad_button_value(0, gp_shoulderlb)*window_get_height();
+
+
 </string>
           </argument>
         </arguments>

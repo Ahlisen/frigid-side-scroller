@@ -12,8 +12,10 @@
     <sprite>sprites\spr_human_walk</sprite>
     <sprite>sprites\spr_dog_idle</sprite>
     <sprite>sprites\spr_dog_walk</sprite>
-    <sprite>sprites\spr_dog_walk_down</sprite>
-    <sprite>sprites\spr_dog_walk_up</sprite>
+    <sprite>sprites\spr_wolf_walk_down</sprite>
+    <sprite>sprites\spr_wolf_walk_up</sprite>
+    <sprite>sprites\spr_wolf_idle_down</sprite>
+    <sprite>sprites\spr_wolf_dying</sprite>
     <sprite>sprites\spr_dog_stand</sprite>
     <sprite>sprites\spr_fir</sprite>
     <sprite>sprites\spr_alm</sprite>
@@ -82,6 +84,9 @@
     <script>scripts\start_death_state.gml</script>
     <script>scripts\flying_hitbox_hit.gml</script>
     <script>scripts\animal_fleeing.gml</script>
+    <script>scripts\animal_idle.gml</script>
+    <script>scripts\animal_stalking.gml</script>
+    <script>scripts\dying.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shd_tv.shader</shader>
@@ -97,11 +102,11 @@
     <object>objects\obj_wrap</object>
     <object>objects\obj_draw_controller</object>
     <object>objects\obj_solid</object>
-    <object>objects\obj_mob</object>
     <object>objects\obj_display_manager</object>
     <object>objects\obj_view_controller</object>
     <object>objects\obj_bird</object>
     <object>objects\obj_bullet</object>
+    <object>objects\obj_mob</object>
     <object>objects\obj_shootable</object>
     <object>objects\obj_boss</object>
     <object>objects\obj_boss_eye</object>

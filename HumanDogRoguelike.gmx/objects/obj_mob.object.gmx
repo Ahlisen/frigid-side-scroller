@@ -30,7 +30,7 @@ myShadow = spr_shadow_small;
 z = 0;
 oldState = do_nothing;
 state = oldState;
-
+target = noone;
 </string>
           </argument>
         </arguments>

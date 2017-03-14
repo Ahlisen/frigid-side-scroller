@@ -36,7 +36,7 @@ background_y[4] = regularOffset;
 screenShakeX = 0;
 screenShakeY = 0;
 
-
+time = 0;
 /*
 background_index[0] = bg_mountain_range;
 background_index[1] = bg_forest;
@@ -104,10 +104,12 @@ if(screenShakeY &gt; 0.2) {
           <argument>
             <kind>1</kind>
             <string>///Parallax &amp; view follow
+time = sin(pi+obj_human.x*0.01); //-1 to 1
+
 
 //Sun
-background_x[0] = view_xview[0]+view_wview[0]/2-background_width[0]/2+cos(pi+obj_human.x*0.004)*128;
-background_y[0] = view_hview[0]/2+view_yview[0]*0.5+sin(pi+obj_human.x*0.004)*64;
+background_x[0] = view_xview[0]+view_wview[0]/2-background_width[0]/2+cos(pi+obj_human.x*0.01)*128;
+background_y[0] = view_hview[0]/2+view_yview[0]*0.5+time*64;
 //Mountains
 background_x[1] = view_xview[0]*0.95;
 background_y[1] = offset+view_yview[0]*0.55;
