@@ -1,2 +1,2 @@
-# gamemaker_test
-Trying source control with gamemaker
+# A frigid side-scroller
+Hobby project in GML
